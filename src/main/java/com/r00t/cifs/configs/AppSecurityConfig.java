@@ -34,7 +34,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/").access("hasRole('USER')")
                 .antMatchers("/login", "/").permitAll()
                 .antMatchers("/*.js", "/*.css", "/*.jpg", "/*.png", "/*.gif").permitAll()
-                .antMatchers("/content/**", "/css/**", "/images/**", "/js/**", "/plugins/**").permitAll()
+                .antMatchers("/content/**", "/css/**", "/image/**", "/js/**", "/plugins/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/")

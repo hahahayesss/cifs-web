@@ -2,7 +2,7 @@ package com.r00t.cifs.services;
 
 import com.r00t.cifs.models.UserModel;
 import com.r00t.cifs.principals.UserPrincipal;
-import com.r00t.cifs.repositories.UserRepository;
+import com.r00t.cifs.repositories.UserModelRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService implements UserDetailsService {
-    private UserRepository repository;
+    private UserModelRepository repository;
 
-    public UserService(UserRepository repository) {
+    public UserService(UserModelRepository repository) {
         this.repository = repository;
     }
 
