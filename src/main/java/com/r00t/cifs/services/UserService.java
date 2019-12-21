@@ -25,4 +25,14 @@ public class UserService implements UserDetailsService {
         else
             throw new UsernameNotFoundException("User not found");
     }
+
+    public UserModel createUser(UserModel userModel) {
+        UserModel temp = repository.findByUsername(userModel.getUsername());
+        if (temp != null)
+            return null;
+
+        userModel.setRegistration(System.currentTimeMillis() + "");
+        userModel.setActive(Boolean.TRUE);
+        return repository.insert(userModel);
+    }
 }

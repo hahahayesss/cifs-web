@@ -6,7 +6,7 @@
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title>CIF - AI</title>
+    <title>CIFS Gallery</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -65,6 +65,12 @@
                                     <ul id="menu-menu" class="menu menu-main">
                                         <li>
                                             <a href="/"><span>Home</span></a>
+                                        </li>
+                                        <li th:if="${AUTH > 0}">
+                                            <a href="/create-user"><span>Create new user</span></a>
+                                        </li>
+                                        <li th:if="${AUTH > 0}">
+                                            <a href="/add-image"><span>Add new image</span></a>
                                         </li>
                                         <li>
                                             <a href="/gallery"><span>Gallery</span></a>

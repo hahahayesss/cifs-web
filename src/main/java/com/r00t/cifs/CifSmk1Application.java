@@ -37,7 +37,7 @@ public class CifSmk1Application extends SpringBootServletInitializer implements 
         userModel.setUsername("qwe");
         userModel.setPassword(new BCryptPasswordEncoder().encode("123456"));
         userModel.setRegistration(System.currentTimeMillis() + "");
-        userModel.setRole("ROLE_USER");
+        userModel.setRole("ROLE_ADMIN");
         userModel.setActive(Boolean.TRUE);
 
         repository.insert(userModel);

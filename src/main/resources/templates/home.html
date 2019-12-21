@@ -1,21 +1,12 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 "> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie10 lt-ie9"> <![endif]-->
-<!--[if IE 9]>
-<html class="no-js lt-ie10"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
 
 <head>
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title>CIF - AI</title>
+    <title>CIFS Home</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -73,6 +64,12 @@
                                         <li>
                                             <a href="/login"><span>Login</span></a>
                                         </li>
+                                        <li th:if="${AUTH > 0}">
+                                            <a href="/create-user"><span>Create new user</span></a>
+                                        </li>
+                                        <li th:if="${AUTH > 0}">
+                                            <a href="/add-image"><span>Add new image</span></a>
+                                        </li>
                                         <li>
                                             <a href="#Header_wrapper"><span>Home</span></a>
                                         </li>
@@ -88,7 +85,6 @@
                                         <li>
                                             <a href="#sub"><span>Subscribe</span></a>
                                         </li>
-
                                     </ul>
                                 </nav>
                                 <a class="responsive-menu-toggle" href="#"><i class="icon-menu-fine"></i></a>
