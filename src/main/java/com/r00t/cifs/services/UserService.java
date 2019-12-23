@@ -34,6 +34,8 @@ public class UserService implements UserDetailsService {
 
         userModel.setPassword(
                 new BCryptPasswordEncoder().encode(userModel.getPassword()));
+        userModel.setRole(
+                "ROLE_" + userModel.getRole().toUpperCase());
         userModel.setRegistration(System.currentTimeMillis() + "");
         userModel.setActive(Boolean.TRUE);
         return repository.insert(userModel);
