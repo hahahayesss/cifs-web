@@ -6,6 +6,7 @@ import com.r00t.cifs.repositories.UserModelRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,6 +32,8 @@ public class UserService implements UserDetailsService {
         if (temp != null)
             return null;
 
+        userModel.setPassword(
+                new BCryptPasswordEncoder().encode(userModel.getPassword()));
         userModel.setRegistration(System.currentTimeMillis() + "");
         userModel.setActive(Boolean.TRUE);
         return repository.insert(userModel);
